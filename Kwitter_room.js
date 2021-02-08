@@ -1,12 +1,12 @@
-//ADD YOUR FIREBASE LINKS HERE
-var firebaseConfig = {
-    apiKey: "AIzaSyAbxgHLFr9TVBeH-mTCCgsr8DbFg00VC8w",
-    authDomain: "kwitter-72a94.firebaseapp.com",
-    databaseURL: "https://kwitter-72a94-default-rtdb.firebaseio.com",
-    projectId: "kwitter-72a94",
-    storageBucket: "kwitter-72a94.appspot.com",
-    messagingSenderId: "992873144043",
-    appId: "1:992873144043:web:c59e5f4326d6dfe4fd28ae"
+ // Your web app's Firebase configuration
+ var firebaseConfig = {
+    apiKey: "AIzaSyCuvyZv50qKnZzEsrp1yGfiTtghEUQ0Xhg",
+    authDomain: "project-93--96.firebaseapp.com",
+    databaseURL: "https://project-93--96-default-rtdb.firebaseio.com",
+    projectId: "project-93--96",
+    storageBucket: "project-93--96.appspot.com",
+    messagingSenderId: "28826380110",
+    appId: "1:28826380110:web:1e54a1489bf397ebd5e01f"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
@@ -17,7 +17,7 @@ var firebaseConfig = {
    room_name=document.getElementById("room_name").value;
    firebase.database().ref(/).child(room_name).update({
        purpose :"adding room name"
-   })   ;
+   });
    localStorage.setItem("room_name",room_name);
    window.location="lets_chat.html";
    function getData() {firebase.database().ref("/").on('value',
@@ -36,6 +36,12 @@ getData();
 function redirectToRoomName(name)
 {
     console.log(name);
-    localStorage.setItem("room_name" name );
-    window.location="lets_chat.html";
+    localStorage.setItem("room_name" name);
+    window.location="kwitter_page.html";
+}
+function logout()
+{
+      localStorage.removeItem("user_name");
+      localStorage.removeItem("room_name");
+      window.location="index.html";
 }
